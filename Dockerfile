@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the current directory contents into the container at /app
 COPY . .
 
+# Grant execute permissions for the maven wrapper file
+RUN chmod +x ./mvnw
+
 # Build the application using Maven
 RUN ./mvnw package -DskipTests
 
